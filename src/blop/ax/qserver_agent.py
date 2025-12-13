@@ -241,7 +241,8 @@ class BlopQserverAgent(BlopAxAgent):
                 """
 
                 # Does this work with the latest version of Tiled? Can I used agent.get_data...?
-                results =  results_db[-1].primary.read().to_dataframe()
+                results_run =  results_db[-1]
+                results = results_run.primary.read().to_dataframe()
  
                 # Get the data in the format required by complete_trials
                 results_dict = {key: results[key].to_list() for key in results}
